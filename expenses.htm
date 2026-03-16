@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinTech - Expenses</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dashboard-body">
+    <header>
+        <nav class="navbar dashboard-navbar">
+            <div class="nav-logo">FinTech</div>
+            <div class="nav-user-info">
+                <span id="loggedInUserName"></span> | <a href="#" id="logoutButton">Logout</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="main-content">
+        <aside class="sidebar">
+            <h3>FinTech</h3>
+            <ul>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/expenses" class="active">Expenses</a></li>
+                <li><a href="/savings">Savings Goals</a></li>
+                <li><a href="/advisory">AI Advisory</a></li>
+                <li><a href="/profile">Profile</a></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <h2>Expense Tracker</h2>
+
+            <div class="form-section card">
+                <h3>Add New Expense</h3>
+                <form id="addExpenseForm">
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <input type="text" id="description" name="description" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="category">Category</label>
+                        <select id="category" name="category" required>
+                            <option value="">--Select Category--</option>
+                            <option value="Food">Food</option>
+                            <option value="Transport">Transport</option>
+                            <option value="Shopping">Shopping</option>
+                            <option value="Bills">Bills</option>
+                            <option value="Entertainment">Entertainment</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Amount</label>
+                        <input type="number" id="amount" name="amount" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Expense</button>
+                </form>
+                <div id="expenseMessage" class="message-box"></div>
+            </div>
+
+            <div class="expense-list-section card">
+                <h3>All Expenses</h3>
+                <div class="table-container">
+                    <table id="allExpensesTable">
+                        <thead>
+                            <tr>
+                                <th>Description</th>
+                                <th>Category</th>
+                                <th>Amount</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Expenses will be loaded here by JavaScript -->
+                            <tr>
+                                <td colspan="4" style="text-align: center;">Loading expenses...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 FinTech. All rights reserved.</p>
+    </footer>
+    <script src="js/expenses.js"></script>
+    <script src="js/auth.js"></script> <!-- For logout functionality -->
+</body>
+</html>

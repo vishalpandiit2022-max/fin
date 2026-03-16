@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinTech - Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dashboard-body">
+    <header>
+        <nav class="navbar dashboard-navbar">
+            <div class="nav-logo">FinTech</div>
+            <div class="nav-user-info">
+                <span id="loggedInUserName"></span> | <a href="#" id="logoutButton">Logout</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="main-content">
+        <aside class="sidebar">
+            <h3>FinTech</h3>
+            <ul>
+                <li><a href="/dashboard" class="active">Dashboard</a></li>
+                <li><a href="/expenses">Expenses</a></li>
+                <li><a href="/savings">Savings Goals</a></li>
+                <li><a href="/advisory">AI Advisory</a></li>
+                <li><a href="/profile">Profile</a></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <h2>Dashboard Overview</h2>
+
+            <div class="overview-cards">
+                <div class="card">
+                    <h3>Monthly Income</h3>
+                    <p id="monthlyIncome">$0.00</p>
+                </div>
+                <div class="card">
+                    <h3>Total Expenses</h3>
+                    <p id="totalExpenses">$0.00</p>
+                </div>
+                <div class="card">
+                    <h3>Net Savings</h3>
+                    <p id="netSavings">$0.00</p>
+                </div>
+                <div class="card">
+                    <h3>Savings Rate %</h3>
+                    <p id="savingsRate">0.00%</p>
+                </div>
+            </div>
+
+            <div class="recent-spending">
+                <h3>Recent Expenses</h3>
+                <div class="table-container">
+                    <table id="recentExpensesTable">
+                        <thead>
+                            <tr>
+                                <th>Description</th>
+                                <th>Category</th>
+                                <th>Amount</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Expenses will be loaded here by JavaScript -->
+                            <tr>
+                                <td colspan="4" style="text-align: center;">No recent expenses found.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="spending-breakdown">
+                <h3>Spending Breakdown</h3>
+                <div id="spendingChartContainer">
+                    <!-- Chart will be rendered here (using simple text or placeholder for now if no charting lib allowed) -->
+                    <p style="text-align: center; padding: 20px; color: #888;">Spending breakdown chart will appear here.</p>
+                    <!-- In a real scenario without external libraries, you'd have to draw SVG or use canvas, which is complex. -->
+                    <!-- For this project, we'll indicate where it would go. -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 FinTech. All rights reserved.</p>
+    </footer>
+    <script src="js/dashboard.js"></script>
+    <script src="js/auth.js"></script> <!-- For logout functionality -->
+</body>
+</html>

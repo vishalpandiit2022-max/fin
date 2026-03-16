@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinTech - Profile</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dashboard-body">
+    <header>
+        <nav class="navbar dashboard-navbar">
+            <div class="nav-logo">FinTech</div>
+            <div class="nav-user-info">
+                <span id="loggedInUserName"></span> | <a href="#" id="logoutButton">Logout</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="main-content">
+        <aside class="sidebar">
+            <h3>FinTech</h3>
+            <ul>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/expenses">Expenses</a></li>
+                <li><a href="/savings">Savings Goals</a></li>
+                <li><a href="/advisory">AI Advisory</a></li>
+                <li><a href="/profile" class="active">Profile</a></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <h2>Profile Settings</h2>
+
+            <div class="profile-section card">
+                <h3>User Information</h3>
+                <div class="profile-details">
+                    <div class="detail-item">
+                        <label>Name:</label>
+                        <span id="profileName">Loading...</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>Email:</label>
+                        <span id="profileEmail">Loading...</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>Monthly Salary:</label>
+                        <span id="profileSalary">Loading...</span>
+                    </div>
+                </div>
+
+                <hr>
+
+                <h3>Update Monthly Salary</h3>
+                <form id="updateSalaryForm">
+                    <div class="form-group">
+                        <label for="newMonthlySalary">New Monthly Salary</label>
+                        <input type="number" id="newMonthlySalary" name="newMonthlySalary" step="0.01" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update Salary</button>
+                </form>
+                <div id="profileMessage" class="message-box"></div>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 FinTech. All rights reserved.</p>
+    </footer>
+    <script src="js/profile.js"></script>
+    <script src="js/auth.js"></script> <!-- For logout functionality -->
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinTech - Savings Goals</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dashboard-body">
+    <header>
+        <nav class="navbar dashboard-navbar">
+            <div class="nav-logo">FinTech</div>
+            <div class="nav-user-info">
+                <span id="loggedInUserName"></span> | <a href="#" id="logoutButton">Logout</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="main-content">
+        <aside class="sidebar">
+            <h3>FinTech</h3>
+            <ul>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/expenses">Expenses</a></li>
+                <li><a href="/savings" class="active">Savings Goals</a></li>
+                <li><a href="/advisory">AI Advisory</a></li>
+                <li><a href="/profile">Profile</a></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <div class="page-header">
+                <h2>Savings Goals</h2>
+                <p>Plan for your future with structured targets.</p>
+                <button id="newGoalButton" class="btn btn-secondary">+ New Goal</button>
+            </div>
+
+            <!-- Modal for adding new goal -->
+            <div id="addGoalModal" class="modal">
+                <div class="modal-content card">
+                    <span class="close-button">&times;</span>
+                    <h3>Create New Savings Goal</h3>
+                    <form id="addGoalForm">
+                        <div class="form-group">
+                            <label for="goal_name">Goal Name</label>
+                            <input type="text" id="goal_name" name="goal_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="target_amount">Target Amount</label>
+                            <input type="number" id="target_amount" name="target_amount" step="0.01" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="months">Target Months</label>
+                            <input type="number" id="months" name="months" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add Goal</button>
+                    </form>
+                    <div id="goalMessage" class="message-box"></div>
+                </div>
+            </div>
+
+            <div id="goalsContainer">
+                <!-- Goals will be loaded here -->
+                <div id="noGoalsMessage" class="no-goals-placeholder" style="display: none;">
+                    <h3>No active goals</h3>
+                    <p>Setting financial goals is the first step to achieving them.</p>
+                    <p>Create your first target to start tracking.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 FinTech. All rights reserved.</p>
+    </footer>
+    <script src="js/savings.js"></script>
+    <script src="js/auth.js"></script> <!-- For logout functionality -->
+</body>
+</html>
